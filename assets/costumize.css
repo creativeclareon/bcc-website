@@ -2252,3 +2252,46 @@ p, .text-subtitle, .card-text, .educator-stat-desc {
 .card-body {
     padding-bottom: 1rem; /* Ensure consistent bottom padding */
 }
+
+/* Align news cards heights */
+.news-section-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    align-items: stretch; /* Make columns equal height */
+}
+
+.news-section-row > .col-md-6 {
+    display: flex;
+    flex-direction: column; /* Ensure content inside column stacks */
+}
+
+.main-news-card {
+    height: 100%; /* Make the main news card fill its column height */
+    display: flex;
+    flex-direction: column;
+}
+
+.main-news-card .card-body {
+    flex-grow: 1; /* Allow the body to expand and push content down */
+}
+
+.other-news-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space evenly between news items */
+}
+
+.other-news-column .card {
+    height: 100%; /* Make each individual news item card fill its space */
+    display: flex;
+    flex-direction: column;
+}
+
+.other-news-column .card-body {
+    padding: 0.6rem !important; /* Further reduced padding */
+}
+
+/* Make the main news title bigger */
+.main-news-card .card-title {
+    font-size: 1.5rem !important; /* Increased font size for main news title */
+}
