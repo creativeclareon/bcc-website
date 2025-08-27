@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bago City College | News Article</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/vendors/fontawesome/all.min.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="stylesheet" href="/assets/costumize.css">
+    <style>
+        .news-article-image {
+            width: 100%;
+            height: auto;
+            max-height: 500px; /* Adjust as needed */
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+        }
+        .breadcrumb-nav {
+            padding: 1rem 0;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            margin-bottom: 2rem;
+        }
+        .breadcrumb-nav .breadcrumb {
+            margin-bottom: 0;
+        }
+        .breadcrumb-nav .breadcrumb-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .breadcrumb-nav .breadcrumb-item.active {
+            color: #6c757d;
+        }
+        .news-content-section {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        .news-sidebar {
+            padding-left: 2rem;
+            border-left: 1px solid #eee;
+        }
+        @media (max-width: 768px) {
+            .news-sidebar {
+                padding-left: 0;
+                border-left: none;
+                border-top: 1px solid #eee;
+                padding-top: 2rem;
+                margin-top: 2rem;
+            }
+        }
+    </style>
+</head>
+<body id="specific-news-page">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top custom-navbar">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="index.html">MySite</a> -->
+<a class="navbar-brand d-flex align-items-center" href="index.html"><img src="assets/images/logo/bago.png" alt="Bago City College" style="height: 60px; width: auto;"/> <span class="ms-2" style="font-weight:700; color: #25396f;">Bago City College</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto"> <!-- Changed mx-auto to ms-auto to align right -->
+                    <ul class="navbar-nav" id="myTab" role="tablist"> <!-- Removed me-4 to align with breadcrumb -->
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link custom-nav-link active" id="home-tab" data-bs-toggle="tab" href="#home"
+                                role="tab" aria-controls="home" aria-selected="true">Home</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link custom-nav-link custom-nav-link-underline" id="profile-tab" data-bs-toggle="tab" href="#about"
+                                role="tab" aria-controls="profile" aria-selected="false">About</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link custom-nav-link custom-nav-link-underline" id="contact-tab" data-bs-toggle="tab" href="#news"
+                                role="tab" aria-controls="contact" aria-selected="false">News</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link custom-nav-link custom-nav-link-underline" id="contact-tab" data-bs-toggle="tab" href="#courses"
+                                role="tab" aria-controls="contact" aria-selected="false">Course</a>
+                        </li>
+                    </ul>
+                    <button class="nav-link login-btn"
+                        data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Get Started - Sign in</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container news-content-section" style="margin-top: 140px;">
+        <div class="row">
+            <div class="col-lg-8">
+                <nav aria-label="breadcrumb" class="breadcrumb-header">
+                    <ol class="breadcrumb" style="margin-bottom: 0;">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="bcc-news.html">Campus News</a></li>
+                        <li class="breadcrumb-item active" aria-current="page" id="news-title-breadcrumb">[News Title]</li>
+                    </ol>
+                </nav>
+                <div id="article-badge-container">
+                    <span id="article-badge" class="update-badge"></span>
+                </div>
+                <h1 id="article-title" style="font-size: 2.5rem; color: #3434FF; margin-top: 0; margin-bottom: 0;">News Article Title</h1>
+                <p class="text-muted d-flex align-items-center mb-4 mt-2">
+                    <i class="bi bi-calendar-event me-2"></i><span id="article-date">June 20, 2025</span>
+                    <span class="mx-2">&bull;</span>
+                    <i class="bi bi-person me-1" style="margin-bottom: 5px;"></i><span id="article-author">Admin</span>
+                </p>
+                <img src="assets/images/samples/origami.jpg" class="img-fluid news-article-image" alt="News Article Image" id="article-image">
+                <div id="article-content" style="font-size: 18px;">
+                    <p>This is the full content of the news article. It will be dynamically loaded here.</p>
+                    <p>Jelly-o sesame snaps cheesecake topping. Cupcake fruitcake macaroon donut pastry gummies tiramisu chocolate bar muffin. Dessert bonbon caramels brownie chocolate bar chocolate tart dragée. Dessert bonbon caramels brownie chocolate bar chocolate tart dragée. Dessert bonbon caramels brownie chocolate bar chocolate tart dragée.</p>
+                    <p>Further details about the news item can be placed here. This section will expand to show the complete story, providing more context and information than the preview on the main news page.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 news-sidebar">
+                    <!-- Campus Updates Section -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">
+                            Campus Updates
+                        </h3>
+                        <p class="sidebar-description">Stay informed with the latest happenings around campus.</p>
+                        <ul class="campus-updates-list">
+                            <li class="campus-update-item">
+                                <div class="update-badge badge-academic">Academic</div>
+                                <div class="update-title">New Computer Science Lab Opens</div>
+                                <p class="update-description">Explore our state-of-the-art facility.</p>
+                                <div class="update-date">
+                                    <i class="bi bi-calendar-event me-2"></i>
+                                    <span>Aug 15, 2025</span>
+                                </div>
+                            </li>
+                            <li class="campus-update-item">
+                                <div class="update-badge badge-student">Student Life</div>
+                                <div class="update-title">Annual Cultural Festival Preparations</div>
+                                <p class="update-description">Get ready for a week of vibrant celebrations.</p>
+                                <div class="update-date">
+                                    <i class="bi bi-calendar-event me-2"></i>
+                                    <span>Aug 12, 2025</span>
+                                </div>
+                            </li>
+                            <li class="campus-update-item">
+                                <div class="update-badge badge-university">University</div>
+                                <div class="update-title">New Partnership with Tech Industry</div>
+                                <p class="update-description">Exciting collaborations for student opportunities.</p>
+                                <div class="update-date">
+                                    <i class="bi bi-calendar-event me-2"></i>
+                                    <span>Aug 10, 2025</span>
+                                </div>
+                            </li>
+                            <li class="campus-update-item">
+                                <div class="update-badge badge-collegian">Collegian</div>
+                                <div class="update-title">Student Publication Wins Award</div>
+                                <p class="update-description">Celebrating excellence in student journalism.</p>
+                                <div class="update-date">
+                                    <i class="bi bi-calendar-event me-2"></i>
+                                    <span>Aug 8, 2025</span>
+                                </div>
+                            </li>
+                            <li class="campus-update-item">
+                                <div class="update-badge badge-academic">Academic</div>
+                                <div class="update-title">Library Extended Hours Announced</div>
+                                <p class="update-description">More time for study and research during exam season.</p>
+                                <div class="update-date">
+                                    <i class="bi bi-calendar-event me-2"></i>
+                                    <span>Aug 5, 2025</span>
+                                </div>
+                            </li>
+                            <li class="campus-update-item">
+                                <div class="update-badge badge-research">Research</div>
+                                <div class="update-title">New Research Laboratory Equipment</div>
+                                <p class="update-description">Advanced equipment now available for student research projects.</p>
+                                <div class="update-date">
+                                    <i class="bi bi-calendar-event me-2"></i>
+                                    <span>Aug 3, 2025</span>
+                                </div>
+                            </li>
+                            <li class="campus-update-item">
+                                <div class="update-badge badge-sports">Sports</div>
+                                <div class="update-title">Swimming Pool Renovation Complete</div>
+                                <p class="update-description">Olympic-size pool now open for students and staff.</p>
+                                <div class="update-date">
+                                    <i class="bi bi-calendar-event me-2"></i>
+                                    <span>Aug 1, 2025</span>
+                                </div>
+                            </li>
+                            <li class="campus-update-item">
+                                <div class="update-badge badge-student">Student Life</div>
+                                <div class="update-title">New Student Lounge Opens</div>
+                                <p class="update-description">Modern recreational space with gaming and study areas.</p>
+                                <div class="update-date">
+                                    <i class="bi bi-calendar-event me-2"></i>
+                                    <span>Jul 30, 2025</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Quick Links Section -->
+
+                    <!-- Upcoming Events Section -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">
+                           Upcoming Events
+                        </h3>
+                        <p class="sidebar-description">Don't miss out on important dates and activities.</p>
+                        <ul class="campus-updates-list">
+                            <li class="campus-update-item">
+                                <div class="update-badge badge-student">Event</div>
+                                <div class="update-title">Freshmen Orientation Week</div>
+                                <p class="update-description">Welcome new students to the BCC family!</p>
+                                <div class="update-date">
+                                    <i class="bi bi-calendar-event me-2"></i>
+                                    <span>Aug 25, 2025</span>
+                                </div>
+                            </li>
+                            <li class="campus-update-item">
+                                <div class="update-badge badge-academic">Academic</div>
+                                <div class="update-title">Research Symposium</div>
+                                <p class="update-description">Showcasing groundbreaking academic projects.</p>
+                                <div class="update-date">
+                                    <i class="bi bi-calendar-event me-2"></i>
+                                    <span>Sep 2, 2025</span>
+                                </div>
+                            </li>
+                            <li class="campus-update-item">
+                                <div class="update-badge badge-university">Sports</div>
+                                <div class="update-title">Inter-College Basketball Tournament</div>
+                                <p class="update-description">Cheer for our teams in this exciting competition.</p>
+                                <div class="update-date">
+                                    <i class="bi bi-calendar-event me-2"></i>
+                                    <span>Sep 10, 2025</span>
+                                </div>
+                            </li>
+                            <li class="campus-update-item">
+                                <div class="update-badge badge-student">Event</div>
+                                <div class="update-title">University Week</div>
+                                <p class="update-description">A week of celebration and campus spirit.</p>
+                                <div class="update-date">
+                                    <i class="bi bi-calendar-event me-2"></i>
+                                    <span>Sep 15, 2025</span>
+                                </div>
+                            </li>
+                            <li class="campus-update-item">
+                                <div class="update-badge badge-academic">Academic</div>
+                                <div class="update-title">Midterm Examinations</div>
+                                <p class="update-description">Important dates for all students.</p>
+                                <div class="update-date">
+                                    <i class="bi bi-calendar-event me-2"></i>
+                                    <span>Oct 10, 2025</span>
+                                </div>
+                            </li>
+                            <li class="campus-update-item">
+                                <div class="update-badge badge-collegian">Cultural</div>
+                                <div class="update-title">Annual Art Exhibition</div>
+                                <p class="update-description">Showcasing student artwork and creative projects.</p>
+                                <div class="update-date">
+                                    <i class="bi bi-calendar-event me-2"></i>
+                                    <span>Oct 20, 2025</span>
+                                </div>
+                            </li>
+                            <li class="campus-update-item">
+                                <div class="update-badge badge-university">Career</div>
+                                <div class="update-title">Job Fair 2025</div>
+                                <p class="update-description">Connect with top employers and explore career opportunities.</p>
+                                <div class="update-date">
+                                    <i class="bi bi-calendar-event me-2"></i>
+                                    <span>Nov 5, 2025</span>
+                                </div>
+                            </li>
+                            <li class="campus-update-item">
+                                <div class="update-badge badge-academic">Academic</div>
+                                <div class="update-title">Final Examinations</div>
+                                <p class="update-description">End of semester examination schedule announced.</p>
+                                <div class="update-date">
+                                    <i class="bi bi-calendar-event me-2"></i>
+                                    <span>Dec 15, 2025</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="row">
+                <!-- Main footer content - Left side -->
+                <div class="col-lg-6 mb-4">
+                    <h2 class="footer-main-title mt-0" style="margin-top: 0 !important;">
+                        <span class="footer-title-line1">Empowering minds,</span>
+                        <span class="footer-title-line2">building careers.</span>
+                    </h2>
+                    <p class="footer-main-subtitle">Inspiring growth through knowledge and opportunity.</p>
+                    <div class="footer-action-buttons mb-4">
+                        <a href="https://admission.bagocitycollege.com/BCCAdmission/Web" class="btn btn-primary footer-btn-enrollment">Apply Now <i class="bi bi-arrow-up-right-square ms-2"></i></a>
+                        <a href="#" class="btn btn-outline-primary footer-btn-courses"></i>Enrollment Schedule</a>
+                    </div>
+                    <div class="row g-2">
+                        <div class="col-md-5">
+                            <h6 class="footer-title" id="contact-title">Contact</h6>
+                            <ul class="footer-list">
+                                <li><a href="tel:+63344611038">(034) 461 1038 / (034) 461 0963</a></li>
+                                <li><a href="tel:+639157125272">0915 712 5272 / 0921 2753 029</a></li>
+                                <li><a href="mailto:bagocitycollege@gmail.com">bagocitycollege@gmail.com</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-5">
+                            <h6 class="footer-title" id="connect-title">Connect</h6>
+                            <div class="footer-social d-flex flex-wrap gap-2 mb-4">
+                                <a href="https://www.facebook.com/bagocitycollegeofficial" class="footer-social-icon"><i class="fab fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/messages/t/459017794139805" class="footer-social-icon"><i class="fab fa-facebook-messenger"></i></a>
+                                <a href="https://www.linkedin.com/school/bagocitycollege/" class="footer-social-icon"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://alumni.bagocitycollege.com/" class="footer-social-icon"><i class="fas fa-globe"></i></a>
+                                
+
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <h6 class="footer-title" id="documentation-title">Documentation</h6>
+                            <div class="footer-social d-flex flex-wrap gap-2">
+                            <ul class="footer-list">
+                                <li><a href="https://www.facebook.com/profile.php?id=100063885379788">Captura</a></li>
+                                <li><a href="https://www.facebook.com/bccthecourier">The Courier Publication</a></li>
+                            </ul>
+                            </div>
+                        </div>
+                                                <div class="col-md-5">
+                            <h6 class="footer-title" id="address-title">Location</h6>
+                            <div class="footer-social d-flex flex-wrap gap-2 mb-4">
+                                <ul class="footer-list">
+                                <li class="d-flex align-items-start">
+                                  <i class="fas fa-map-marker-alt footer-social-icon"></i>
+                                  <a href="https://www.google.com/maps/place/Bago+City+College/@10.5308626,122.8409068,17z/data=!3m1!4b1!4m6!3m5!1s0x33aec63007585bb7:0x46a4d1fea7196baf!8m2!3d10.5308626!4d122.8434817!16s%2Fg%2F11_tp0vg7?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D" class="ms-2">Rafael Salas Drive Bago City 6101 Neg. Occ. Philippines</a>
+                                </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Organization Sections - Right side in 3 columns -->
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <h6 class="footer-title" id="academic-title">Academic</h6>
+                            <ul class="footer-list">
+                                <li><a href="https://www.facebook.com/profile.php?id=100090262734606">Abhaya</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100086952939198">BSOA Alliance</a></li>
+                                <li><a href="#">Cilt</a></li>
+                                <li><a href="#">Criminology Department Officers</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100087270083733">La Liga Historiadores</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100086980203419">Organisasyon ng Kamagfil</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100086759912722">The Generals</a></li>
+                                <li><a href="#">Teacher Education Department Officers</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100086638070436">Latera Recta Club</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100087274741123">League of Young Social Studies Educators</a></li>
+   
+                            </ul>
+
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="footer-title" id="cultural-title">Cultural</h6>
+                            <ul class="footer-list">
+                                <li><a href="https://www.facebook.com/profile.php?id=100087555679272">Akasya</a></li>
+                                <li><a href="https://www.facebook.com/bagocitymarchingband">Bago City Marching Band</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=61551069933183">Likha Haraya</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=61563546293604">Lingua Connect</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100090054301485">Talentos Club</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100086803998713">Teatro Bagueno</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100087745900576">The Voices Club</a></li>
+                            </ul>
+                            <h6 class="footer-title mt-4" id="health-title">Health</h6>
+                            <ul class="footer-list">
+                                <li><a href="https://www.facebook.com/bagocitycollegecrcy">College Red Cross Youth</a></li>
+                                <li><a href="https://www.facebook.com/groups/260081923638826">DRYVV - BCC</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100069856392533">Green Society</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100063958208736">Peer Facilitators</a></li>
+                            </ul>
+                            
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="footer-title" id="sports-title">Sports</h6>
+                            <ul class="footer-list">
+                                <li><a href="#">Athleticus</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=61563838155738">BCCC Arnis Striking Force</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=61552011866440">BCC Judo</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=61550890987266">BCC Phantom Taekwando</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=61565137230236">BCC Team Vipers</a></li>
+                            </ul>
+                            <h6 class="footer-title mt-4" id="religious-title">Religious</h6>
+                            <ul class="footer-list">
+                                <li><a href="https://www.facebook.com/groups/bagocitycollegeccf">CCF</a></li>
+                                <li><a href="#">SCAP</a></li>
+                                <li><a href="https://www.facebook.com/nlacm.bcc">NLACM</a></li>
+                            </ul>
+                            </ul>
+                            <!-- <h6 class="footer-title mt-4">Documentation</h6>
+                            <ul class="footer-list">
+                                <li><a href="#">Captura</a></li>
+                                <li><a href="#">The Courier Publication</a></li>
+                            </ul> -->
+                            <h6 class="footer-title mt-4" id="lgbtq-title">LGBTQ</h6>
+                            <ul class="footer-list">
+                                <li><a href="https://www.facebook.com/profile.php?id=100086706314173">LAKAPATI</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr style="opacity: 10%;">
+                <div class="container my-4">
+  <div class="row align-items-center justify-content-between">
+    
+    <!-- Left Side: Message -->
+    <div class="col-md-8 mb-3 mb-md-0">
+      <p class="mb-0 footer-contact-text">
+        Should you require further information, please do not hesitate to <b style="color:hwb(240 20% 0%)">contact us</b>  via email.
+        We are happy to assist you with any inquiries regarding admissions.
+      </p>
+    </div>
+
+    <!-- Right Side: Email and Button -->
+    <div class="col-md-4 text-md-end">
+      <div class="d-flex justify-content-md-end align-items-center gap-2 flex-wrap">
+        <!-- Email Box -->
+        <div class="border border-primary rounded px-3 py-2" style="color:#3434FF; stroke:#3434FF">
+          bagocitycollege@gmail.com
+        </div>
+
+        <!-- Open Gmail Button -->
+        <button type="button" id="openGmailBtn" class="btn btn-primary" style="background-color:#3434FF; border-color:#3434FF; color:white; font-weight: 500;" >
+          Send Letter
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+            </div>
+            <div class="footer-bottom-bar d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
+                <div class="footer-bottom-left  small mb-2 mb-md-0">
+                    © 2018 Copyright Bago City College
+                </div>
+                <div class="footer-bottom-center  small mb-2 mb-md-0">
+                    Powered by Technopal Software Developer and Consultancy
+                </div>
+                <div class="footer-bottom-right  small">
+                    <span id="realTimeDisplay"></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Back to Top Button -->
+    <button id="backToTop" class="back-to-top-btn" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/vendors/fontawesome/all.min.js"></script>
+    <!-- <script src="assets/js/main.js"></script> --> <!-- Removed as it causes errors on this page -->
+    <script src="assets/js/scroll-animations.js"></script>
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/back-to-top.js"></script>
+    <script src="assets/js/real-time-display.js"></script>
+    <script src="assets/js/footer-interactions.js"></script>
+    <script src="assets/js/news-filters.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Connect title hover effect
+        const connectTitle = document.getElementById('connect-title');
+        const footerSocial = document.querySelector('.footer-social');
+        
+        if (connectTitle && footerSocial) {
+          footerSocial.addEventListener('mouseenter', function() {
+            connectTitle.style.color = '#3434FF';
+          });
+          
+          footerSocial.addEventListener('mouseleave', function() {
+            connectTitle.style.color = '';
+          });
+        }
+        
+        // Contact section hover effect
+        const contactTitle = document.getElementById('contact-title');
+        const contactList = contactTitle ? contactTitle.nextElementSibling : null;
+        if (contactTitle && contactList) {
+          contactList.addEventListener('mouseenter', function() {
+            contactTitle.style.color = '#3434FF';
+          });
+          
+          contactList.addEventListener('mouseleave', function() {
+            contactTitle.style.color = '';
+          });
+        }
+        
+        // Documentation section hover effect
+        const documentationTitle = document.getElementById('documentation-title');
+        const documentationList = documentationTitle ? documentationTitle.nextElementSibling : null;
+        if (documentationTitle && documentationList) {
+          documentationList.addEventListener('mouseenter', function() {
+            documentationTitle.style.color = '#3434FF';
+          });
+          
+          documentationList.addEventListener('mouseleave', function() {
+            documentationTitle.style.color = '';
+          });
+        }
+        
+        // Address section hover effect
+        const addressTitle = document.getElementById('address-title');
+        const addressList = addressTitle ? addressTitle.nextElementSibling : null;
+        if (addressTitle && addressList) {
+          addressList.addEventListener('mouseenter', function() {
+            addressTitle.style.color = '#3434FF';
+          });
+          
+          addressList.addEventListener('mouseleave', function() {
+            addressTitle.style.color = '';
+          });
+        }
+        
+        // Academic section hover effect
+        const academicTitle = document.getElementById('academic-title');
+        const academicList = academicTitle ? academicTitle.nextElementSibling : null;
+        if (academicTitle && academicList) {
+          academicList.addEventListener('mouseenter', function() {
+            academicTitle.style.color = '#3434FF';
+          });
+          
+          academicList.addEventListener('mouseleave', function() {
+            academicTitle.style.color = '';
+          });
+        }
+        
+        // Cultural section hover effect
+        const culturalTitle = document.getElementById('cultural-title');
+        const culturalList = culturalTitle ? culturalTitle.nextElementSibling : null;
+        if (culturalTitle && culturalList) {
+          culturalList.addEventListener('mouseenter', function() {
+            culturalTitle.style.color = '#3434FF';
+          });
+          
+          culturalList.addEventListener('mouseleave', function() {
+            culturalTitle.style.color = '';
+          });
+        }
+        
+        // Health section hover effect
+        const healthTitle = document.getElementById('health-title');
+        const healthList = healthTitle ? healthTitle.nextElementSibling : null;
+        if (healthTitle && healthList) {
+          healthList.addEventListener('mouseenter', function() {
+            healthTitle.style.color = '#3434FF';
+          });
+          
+          healthList.addEventListener('mouseleave', function() {
+            healthTitle.style.color = '';
+          });
+        }
+        
+        // Sports section hover effect
+        const sportsTitle = document.getElementById('sports-title');
+        const sportsList = sportsTitle ? sportsTitle.nextElementSibling : null;
+        if (sportsTitle && sportsList) {
+          sportsList.addEventListener('mouseenter', function() {
+            sportsTitle.style.color = '#3434FF';
+          });
+          
+          sportsList.addEventListener('mouseleave', function() {
+            sportsTitle.style.color = '';
+          });
+        }
+        
+        // Religious section hover effect
+        const religiousTitle = document.getElementById('religious-title');
+        const religiousList = religiousTitle ? religiousTitle.nextElementSibling : null;
+        if (religiousTitle && religiousList) {
+          religiousList.addEventListener('mouseenter', function() {
+            religiousTitle.style.color = '#3434FF';
+          });
+          
+          religiousList.addEventListener('mouseleave', function() {
+            religiousTitle.style.color = '';
+          });
+        }
+        
+        // LGBTQ section hover effect
+        const lgbtqTitle = document.getElementById('lgbtq-title');
+        const lgbtqList = lgbtqTitle ? lgbtqTitle.nextElementSibling : null;
+        if (lgbtqTitle && lgbtqList) {
+          lgbtqList.addEventListener('mouseenter', function() {
+            lgbtqTitle.style.color = '#3434FF';
+          });
+          
+          lgbtqList.addEventListener('mouseleave', function() {
+            lgbtqTitle.style.color = '';
+          });
+        }
+      });
+    </script>
+
+</body>
+                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                                                role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalCenterTitle" style="color:#1F243C;">
+                                                            Sign in
+                                                        </h5>
+                                                        <button type="button" class="close" data-bs-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <i data-feather="x"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                             <div class="divider divider-left">
+                                                                <div class="divider-text" style="font-size: 14px;">Bago City College Student Account.</div>
+                                                             </div>
+                                    <div class="row mb-3">
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control rounded-6" id="date_display"  style="background-color: white; border-color: #4950573b; " required>
+                                                <label for="date_display">Username</label>
+                                            </div>
+                                        </div>
+                                    </div>
+            <div class="row mb-3">
+                <div class="col-12">
+                    <div class="form-floating position-relative">
+                        <input type="password" class="form-control rounded-6" id="modal_password_input" style="background-color: white; border-color: #4950573b;" required>
+                        <label for="modal_password_input">Password</label>
+                        <button type="button" class="btn btn-link p-0 position-absolute top-50 end-0 translate-middle-y me-3" id="togglePasswordBtn" aria-label="Show password" style="text-decoration: none;">
+                            <i class="bi bi-eye" id="togglePasswordIcon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <p style="font-size: 14px;">By Signing in, please keep your Bago City College account <b>secure</b> and <b>never share your login details or personal information</b> with others.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-light-secondary"
+                                                            data-bs-dismiss="modal">
+                                                            <i class="bx bx-x d-block d-sm-none"></i>
+                                                            <span class="d-none d-sm-block">Close</span>
+                                                        </button>
+                                                        <button type="button" class="btn modal-signin-btn ml-1"
+                                                            data-bs-dismiss="modal">
+                                                            <i class="bx bx-check d-block d-sm-none"></i>
+                                                            <span class="d-none d-sm-block">Sign in</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+<!-- Enrollment Schedule Modal -->
+<div class="modal fade" id="enrollmentModal" tabindex="-1" role="dialog" aria-labelledby="enrollmentModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="enrollmentModalTitle" style="color:#25396f;">Enrollment Schedule</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <i data-feather="x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 14px;">Enrollment will be conducted by year level, with a separate schedule for transferees and shifters.</p>
+        <ul class="list-group">
+          <li class="list-group-item active" style="background-color:#3434FF;border-color:#3434FF;color:#ffffff;">Enrollment Schedule Academic Year 2024 - 2025</li>
+          <li class="list-group-item">June 16 – for Fourth-Year Students</li>
+          <li class="list-group-item">June 17 – for Third-Year Students</li>
+          <li class="list-group-item">June 18 – for Second-Year Students</li>
+          <li class="list-group-item">June 19 – for First-Year Students</li>
+          <li class="list-group-item">June 23 – for Transferees and Shifters</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+          <span>Close</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="bsisModal" tabindex="-1" role="dialog" aria-labelledby="bsisModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bsisModal" style="color:#25396f;">Meet Our Distinguished Educators</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <i data-feather="x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 14px;">Dedicated mentors shaping future IT professionals through expertise, innovation, and hands-on learning  .</p>
+<ul class="list-group">
+  <li class="list-group-item active d-flex justify-content-between" style="background-color:#3434FF;border-color:#3434FF;color:#ffffff;">
+    <span>Mr. Anthony S. Malabanan, MIT</span>
+    <span class="color:white">Department Head</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between">
+    <span>Mr. Alberto Alvarez Jr.</span>
+    <span class="text-muted">Instructor I</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between">
+    <span>Mr. Gerard Pacete</span>
+    <span class="text-muted">PTMA</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between">
+    <span>Ms. Gerlie Togle</span>
+    <span class="text-muted">PTMA</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between">
+    <span>Mr. Jason Delos Reyes</span>
+    <span class="text-muted">PTMA</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between">
+    <span>Mr. Joshua Dignadice</span>
+    <span class="text-muted">PTMA</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between">
+    <span>Ms. Khycy Janz Alvarez</span>
+    <span class="text-muted">Resident Instructor</span>
+  </li>
+</ul>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+          <span>Close</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+</html>

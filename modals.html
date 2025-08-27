@@ -1,12 +1,25 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bago City College | NEWS</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/vendors/fontawesome/all.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
 </head>
 <style>
-body {
+  body {
     font-family: 'Raleway', sans-serif;
     background-color: white !important;
 }
@@ -38,6 +51,7 @@ html { font-size: 16px; }
   --space-4: 32px;
   --space-5: 40px;
   --space-6: 48px;
+  --news-card-image-height: 17.6rem; /* Adjust this value to make news cards bigger or smaller */
 }
 
 /* ===== Navbar styling ===== */
@@ -87,7 +101,8 @@ html { font-size: 16px; }
 
 .login-btn:focus {
     outline: none !important;
-    box-shadow: none !important;
+    box-shadow: 0 0 0 0.2rem rgba(52, 52, 255, 0.25) !important;
+    transform: translateY(-2px);
 }
 
 /* Profile icon styling in login button */
@@ -316,6 +331,9 @@ p, .text-subtitle, .card-text, .educator-stat-desc {
       transition: all 0.3s ease;
       border: 0.5px solid rgba(60,60,60,0.10); /* subtle grey border */
   }
+  #news .card:hover {
+      transform: translateY(-2px);
+  }
   
   /* News Card Title Hover Effect */
   #news .card .card-title {
@@ -374,11 +392,11 @@ p, .text-subtitle, .card-text, .educator-stat-desc {
   }
   
   .news-main-image {
-      height: 20rem;
+      height: var(--news-card-image-height);
       object-fit: cover;
   }
 @media (max-width: 575.98px) {
-  .news-main-image { height: 14rem; }
+  .news-main-image { height: calc(var(--news-card-image-height) * 0.7); } /* Adjust proportionally for smaller screens */
 }
   
   .news-badge {
@@ -807,7 +825,8 @@ p, .text-subtitle, .card-text, .educator-stat-desc {
   }
   .hero-enroll-btn:focus {
       outline: none !important;
-      box-shadow: none !important;
+      box-shadow: 0 0 0 0.2rem rgba(52, 52, 255, 0.25) !important;
+      transform: translateY(-2px);
   }
   
   
@@ -843,9 +862,11 @@ p, .text-subtitle, .card-text, .educator-stat-desc {
   .hero-courses-btn:hover i {
       color: #fff;
   }
+  
   .hero-courses-btn:focus {
       outline: none !important;
-      box-shadow: none !important;
+      box-shadow: 0 0 0 0.2rem rgba(52, 52, 255, 0.25) !important;
+      transform: translateY(-2px);
   }
   
   .hero-icon-box {
@@ -1259,9 +1280,17 @@ p, .text-subtitle, .card-text, .educator-stat-desc {
   }
   
   .about-arrow-btn:hover {
-      background: #1F243C;
+      background: #3434FF;
       color: #fff;
-      border-color: #1F243C;
+      border-color: #3434FF;
+  }
+  
+  .about-arrow-btn:focus {
+      outline: none !important;
+      box-shadow: 0 0 0 0.2rem rgba(52, 52, 255, 0.25) !important;
+      background: #3434FF;
+      color: #fff;
+      border-color: #3434FF;
   }
   
   .about-arrow-btn:disabled {
@@ -1338,6 +1367,11 @@ p, .text-subtitle, .card-text, .educator-stat-desc {
   .back-to-top-btn:hover {
       background: #3434FF;
       transform: translateY(-2px);
+  }
+  
+  .back-to-top-btn:focus {
+      outline: none !important;
+      box-shadow: 0 0 0 0.2rem rgba(52, 52, 255, 0.25) !important;
   }
   
   .back-to-top-btn i {
@@ -1475,8 +1509,20 @@ p, .text-subtitle, .card-text, .educator-stat-desc {
     transition: background 0.2s, color 0.2s;
 }
 .footer-social-icon:hover {
-    background: #1F243C;
+    background: #3434FF;
     color: #fff;
+}
+
+
+/* Remove hover effect for address icon */
+.footer-list .fa-map-marker-alt:hover {
+    background: #f5f5f5 !important;
+    color: #555 !important;
+}
+
+/* Align address text horizontally with icon */
+.footer-list .fa-map-marker-alt {
+    align-self: flex-start;
 }
 @media (max-width: 991.98px) {
     .custom-footer .row > [class^='col-'] {
@@ -1530,6 +1576,131 @@ p, .text-subtitle, .card-text, .educator-stat-desc {
         margin-bottom: 0.2rem;
     }
 }
+
+/* Footer organizational sections positioning */
+.custom-footer .col-lg-6:last-child {
+    margin-top: 1rem;
+}
+
+@media (max-width: 991.98px) {
+    .custom-footer .col-lg-6:last-child {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .custom-footer .col-lg-6:last-child {
+        margin-top: 1rem;
+    }
+}
+
+/* New Footer Header Styles */
+.footer-main-title {
+    font-size: 3.3rem;
+    font-weight: 800;
+    color: #0B0B2C; 
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    bottom: 30px;
+}
+.footer-title-line1,
+.footer-title-line2 {
+    display: block;
+}
+.footer-title-line1 {
+    color: #0B0B2C;
+    
+}
+.footer-title-line2 {
+    color: #3434FF;
+}
+.footer-main-subtitle {
+    font-size: 1.1rem;
+    color: #495057;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+.footer-action-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.footer-btn-enrollment {
+    background-color: #3434FF !important;
+    border-color: #3434FF !important;
+    color: #ffffff !important;
+    padding: 12px 24px;
+    font-weight: 500;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.footer-btn-enrollment:hover {
+    background-color: #3030dc !important;
+    border-color: #3030dc !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+.footer-btn-enrollment:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 0.2rem rgba(52, 52, 255, 0.25) !important;
+    transform: translateY(-2px);
+}
+.footer-btn-courses {
+    background-color: transparent !important;
+    border-color: #3434FF !important;
+    color: #3434FF !important;
+    padding: 12px 24px;
+    font-weight: 500;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+.footer-btn-courses:hover {
+    background-color: #3434FF !important;
+    border-color: #3434FF !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+.footer-btn-courses:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 0.2rem rgba(52, 52, 255, 0.25) !important;
+    transform: translateY(-2px);
+}
+.footer-btn-courses i {
+    color: inherit;
+}
+
+/* Move Apply Now button icon down slightly */
+.footer-btn-enrollment .bi-arrow-up-right-square {
+    position: relative;
+    top: 2px;
+}
+
+@media (max-width: 767.98px) {
+    .footer-main-title {
+        font-size: 2rem;
+    }
+    .footer-main-subtitle {
+        font-size: 1rem;
+    }
+    .footer-action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+    .footer-btn-enrollment,
+    .footer-btn-courses {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
   
     .course-btn i {
         font-size: 16px !important;
@@ -1540,6 +1711,51 @@ p, .text-subtitle, .card-text, .educator-stat-desc {
       height: auto !important;
   }
   
+  /* Contact text with proper width for alignment with comma in main title */
+.footer-contact-text {
+    font-size: 1rem;
+    color: #495057;
+    line-height: 1.4;
+    text-align: justify;
+    margin-bottom: 0;
+}
+
+/* Email buttons styling */
+.footer-email-buttons {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.footer-email-text {
+    font-size: 0.9rem;
+    color: #3434FF;
+    font-weight: 500;
+    border: 1px solid #3434FF;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #f8f9ff;
+}
+
+.footer-gmail-btn {
+    background-color: #3434FF;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.footer-gmail-btn:hover {
+    background-color: #3030dc;
+    transform: translateY(-2px);
+}
+
   /* Modal password eye icon color */
 #togglePasswordBtn i { color: #adb5bd; }
 
@@ -1592,7 +1808,9 @@ p, .text-subtitle, .card-text, .educator-stat-desc {
 .navbar-nav.mx-auto .nav-link.active::after {
   opacity: 1 !important;
   transform: translateX(-50%) scaleX(1) !important;
+  content: "" !important;
 }
+
 /* Ensure Home behaves the same: underline only when active */
 .navbar-nav.mx-auto #home-tab.active::after {
   opacity: 1 !important;
@@ -1641,135 +1859,1709 @@ p, .text-subtitle, .card-text, .educator-stat-desc {
     margin-left: auto; /* Align to the right */
 }
 
+/* Footer contact section styles */
+.footer-contact-message {
+    font-size: 1rem;
+    color: #495057;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+.footer-contact-highlight {
+    color: #3434FF;
+}
+
+.footer-email-box {
+    border-color: #3434FF !important;
+    color: #3434FF;
+    background-color: #f8f9ff;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.footer-gmail-button {
+    background-color: #3434FF;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.footer-gmail-button:hover {
+    background-color: #3030dc;
+    transform: translateY(-2px);
+}
+
+.footer-gmail-button:focus {
+    background-color: #3030dc;
+    color: #ffffff;
+    box-shadow: 0 0 0 0.2rem rgba(52, 52, 255, 0.25);
+}
+
+.footer-gmail-button:active {
+    background-color: #2828c8;
+    color: #ffffff;
+    transform: translateY(0);
+}
+
+/* Focus effect for Open Gmail button */
+#openGmailBtn:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 0.2rem rgba(52, 52, 255, 0.25) !important;
+}
+
+/* Custom styles for news page search and filter */
+.news-header-controls {
+    margin-top: 20px !important; /* Adjust as needed to move it down */
+}
+
+.dropdown-menu .form-check-input {
+    margin-right: 0.5rem;
+}
+
+.dropdown-menu .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+}
+
+.dropdown-menu .dropdown-item input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+.dropdown-menu .dropdown-item:active {
+    background-color: #e9ecef;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    color: #3434FF !important;
+}
+
+.dropdown-menu .dropdown-item:hover i {
+    color: #3434FF !important;
+}
+
+/* Filter button styling */
+#filterDropdown {
+    background-color: #3434FF !important;
+    border-color: #3434FF !important;
+    color: #ffffff !important;
+    font-weight: 500 !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+    width: 40px; /* Initial width for icon only */
+    overflow: hidden;
+    transition: width 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#filterDropdown:hover {
+    background-color: #3030dc !important; /* Slightly darker on hover */
+    border-color: #3030dc !important;
+    transform: none !important;
+    width: 100px; /* Expanded width on hover */
+}
+
+#filterDropdown:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 0.2rem rgba(52, 52, 255, 0.25) !important;
+}
+
+#filterDropdown i {
+    color: #ffffff !important; /* Ensure icon color is white */
+    margin-right: 0;
+    transition: margin-right 0.3s ease;
+}
+
+#filterDropdown:hover i {
+    margin-right: 8px; /* Add margin to icon on hover */
+}
+
+.filter-text {
+    display: inline-block;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#filterDropdown:hover .filter-text {
+    opacity: 1;
+}
+
+/* Search button styling */
+#button-addon2 {
+    border-color:  rgba(52, 52, 255, 0.3)!important;
+    color:#3434FF !important;
+    background-color: transparent !important;
+}
+
+#button-addon2:hover {
+    background-color: transparent !important;
+    border-color: #3434FF !important;
+    color: #3434FF !important;
+}
+
+#button-addon2:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 0.2rem rgba(52, 52, 255, 0.25) !important;
+}
+
+#button-addon2 i {
+    color: #495057 !important;
+}
+
+/* Search input field styling */
+.input-group .form-control {
+    border-color: rgba(73, 80, 87, 0.3); /* 0.3 = 30% opacity */
+
+}
+
+.input-group .form-control:focus {
+    border-color: #3434FF !important;
+    box-shadow: 0 0 0 0.2rem rgba(52, 52, 255, 0.25) !important;
+}
+
+/* Pagination styling to match Sign in button color */
+.pagination .page-item.active .page-link {
+    background-color: #3434FF !important;
+    border-color: #3434FF !important;
+    box-shadow: 0 2px 5px rgba(52, 52, 255, 0.3) !important;
+}
+
+.pagination .page-item .page-link:focus {
+    box-shadow: 0 0 0 0.2rem rgba(52, 52, 255, 0.25) !important;
+}
+
+.pagination .page-item:not(.active) .page-link:hover {
+    color: #3434FF !important;
+}
+
+.pagination .page-link {
+    padding: 8px 12px !important; /* Adjust padding to make it slightly bigger */
+    min-width: 40px; /* Ensure a minimum width for consistent sizing */
+    text-align: center;
+}
+
+.news-main-layout {
+    display: flex;
+    gap: 1rem;
+    margin-top: 30px;
+    align-items: stretch; /* Align items with equal height */
+}
+
+.news-content {
+    flex: 2;
+    min-width: 0; /* Prevent flex item from overflowing */
+}
+
+.news-sidebar {
+    flex: 1;
+    min-width: 300px;
+    /* Removed top: 160px; to allow for equal height stretching */
+}
+
+/* News grid - 2 columns with better alignment */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    align-items: stretch; /* Make all cards same height */
+}
+
+/* Ensure all news cards have consistent height */
+.news-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.news-card .card-body {
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.news-card .card-text {
+    flex-grow: 1;
+}
+
+        /* Sidebar styling */
+/* Enhanced scrollable sidebar styling */
+.sidebar-card {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0B0B2C;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent title from shrinking */
+}
+
+.sidebar-description {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    flex-shrink: 0; /* Prevent description from shrinking */
+}
+
+/* Scrollable container for campus updates - shows max 5 items before scrolling */
+.campus-updates-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 8px; /* Space for scrollbar */
+    margin-right: -8px; /* Compensate for padding */
+    /* Calculate height for exactly 5 items */
+    max-height: calc(5 * 100px); /* Approximately 100px per item including borders and padding */
+}
+
+/* Desktop and tablet specific height */
+@media (min-width: 768px) {
+    .campus-updates-container {
+        max-height: calc(5 * 95px); /* Refined height for desktop */
+    }
+}
+
+/* Large desktop specific height */
+@media (min-width: 1200px) {
+    .campus-updates-container {
+        max-height: calc(5 * 98px); /* Optimized for larger screens */
+    }
+}
+
+.campus-updates-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.campus-update-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    margin-right: 8px; /* Ensure content doesn't overlap scrollbar */
+}
+
+.campus-update-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0.5rem; /* Small padding at bottom */
+}
+
+.campus-update-item:hover {
+    margin: 0 -0.5rem 0 -0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    color: #3434FF;
+    cursor: pointer;
+}
+
+/* Custom scrollbar styling - responsive */
+.campus-updates-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+@media (max-width: 767.98px) {
+    .campus-updates-container::-webkit-scrollbar {
+        width: 4px; /* Thinner scrollbar on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .campus-updates-container::-webkit-scrollbar {
+        width: 3px; /* Even thinner on very small screens */
+    }
+}
+
+.campus-updates-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.campus-updates-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+    transition: background 0.3s ease;
+}
+
+.campus-updates-container::-webkit-scrollbar-thumb:hover {
+    background: #3434FF;
+}
+
+/* Firefox scrollbar styling */
+.campus-updates-container {
+    scrollbar-width: thin;
+    scrollbar-color: #c1c1c1 #f1f1f1;
+}
+
+/* Badge and content styling remains the same */
+.update-badge, .news-card .update-badge {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.badge-academic {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.badge-student {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.badge-university {
+    background-color: #e8f5e8;
+    color: #388e3c;
+}
+
+.badge-collegian {
+    background-color: #fff3e0;
+    color: #f57c00;
+}
+
+.badge-research {
+    background-color: #e0f7fa;
+    color: #00838f;
+}
+
+.badge-sports {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.update-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0B0B2C;
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+}
+
+.campus-update-item:hover .update-title {
+    color: #3434FF;
+}
+
+.update-description {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.update-date {
+    font-size: 0.75rem;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.update-date .bi-calendar-event {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+}
+
+/* Scroll indicator */
+.sidebar-card::after {
+    content: "";
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(45deg, transparent 40%, #3434FF 40%, #3434FF 60%, transparent 60%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.sidebar-card:hover::after {
+    opacity: 0.3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .sidebar-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .campus-updates-container {
+        max-height: calc(5 * 90px); /* Tablet height adjustment */
+        padding-right: 6px;
+        margin-right: -6px;
+    }
+    
+    .campus-update-item {
+        margin-right: 6px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .sidebar-card {
+        padding: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .sidebar-title {
+        font-size: 1.15rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .sidebar-description {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .campus-updates-container {
+        max-height: calc(5 * 85px); /* Mobile height adjustment */
+        padding-right: 5px;
+        margin-right: -5px;
+    }
+    
+    .campus-update-item {
+        margin-right: 5px;
+        padding: 0.85rem 0;
+    }
+    
+    .update-title {
+        font-size: 0.85rem;
+        line-height: 1.2;
+    }
+    
+    .update-description {
+        font-size: 0.75rem;
+        line-height: 1.3;
+        margin-bottom: 0.4rem;
+    }
+    
+    .update-date {
+        font-size: 0.7rem;
+    }
+    
+    .update-badge {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+        margin-bottom: 0.4rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .sidebar-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .sidebar-title {
+        font-size: 1.1rem;
+    }
+    
+    .campus-updates-container {
+        max-height: calc(5 * 80px); /* Small mobile height adjustment */
+        padding-right: 4px;
+        margin-right: -4px;
+    }
+    
+    .campus-update-item {
+        margin-right: 4px;
+        padding: 0.75rem 0;
+    }
+    
+    .update-title {
+        font-size: 0.8rem;
+    }
+    
+    .update-description {
+        font-size: 0.7rem;
+        margin-bottom: 0.35rem;
+    }
+    
+    .update-date {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar-card {
+        padding: 0.85rem;
+    }
+    
+    .campus-updates-container {
+        max-height: calc(5 * 75px); /* Extra small mobile adjustment */
+    }
+    
+    .campus-update-item {
+        padding: 0.65rem 0;
+    }
+    
+    .update-title {
+        font-size: 0.78rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .update-description {
+        font-size: 0.68rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .update-badge {
+        font-size: 0.6rem;
+        padding: 0.15rem 0.35rem;
+    }
+}
+
+/* Animation for smooth scrolling */
+.campus-updates-container {
+    scroll-behavior: smooth;
+}
+
+/* Fade effect at top and bottom of scrollable area */
+.campus-updates-container {
+    position: relative;
+}
+
+.campus-updates-container::before {
+    content: "";
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(to bottom, #ffffff, transparent);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.campus-updates-container::after {
+    content: "";
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(to top, #ffffff, transparent);
+    z-index: 1;
+    pointer-events: none;
+}
+
+@media (max-width: 767.98px) {
+    .news-main-layout {
+        gap: 1.5rem;
+    }
+    
+    .sidebar-card {
+        padding: 1rem;
+    }
+    
+    .sidebar-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+}
+.card-body p {
+    margin-bottom: 0.5rem;
+}
+
+.card-body p:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Tighter spacing for news card metadata */
+.news-card .small { 
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Remove extra space from Bootstrap's default card styling */
+.card {
+    margin-bottom: 0;
+}
+
+.card-body {
+    padding-bottom: 1rem; /* Ensure consistent bottom padding */
+}
+
+/* Align news cards heights */
+.news-section-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    align-items: stretch; /* Make columns equal height */
+}
+
+.news-section-row > .col-md-6 {
+    display: flex;
+    flex-direction: column; /* Ensure content inside column stacks */
+}
+
+.main-news-card {
+    height: 100%; /* Make the main news card fill its column height */
+    display: flex;
+    flex-direction: column;
+}
+
+.main-news-card .card-body {
+    flex-grow: 1; /* Allow the body to expand and push content down */
+}
+
+.other-news-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space evenly between news items */
+}
+
+.other-news-column .card {
+    height: 100%; /* Make each individual news item card fill its space */
+    display: flex;
+    flex-direction: column;
+}
+
+.other-news-column .card-body {
+    padding: 0.6rem !important; /* Further reduced padding */
+}
+
+/* Make the main news title bigger */
+.main-news-card .card-title {
+    font-size: 1.5rem !important; /* Increased font size for main news title */
+}
+
 
 </style>
 <body>
-     <footer class="custom-footer">
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top custom-navbar">
         <div class="container">
-            <div class="row g-4 mb-2">
-                <div class="col-6 col-md-2">
-                    <h6 class="footer-title">Academic</h6>
-                    <ul class="footer-list">
-                        <li><a href="#">Abhaya</a></li>
-                        <li><a href="#">BSOA Alliance</a></li>
-                        <li><a href="#">Cilt</a></li>
-                        <li><a href="#">Criminology Department Officers</a></li>
-                        <li><a href="#">La Liga Historiadores</a></li>
-                        <li><a href="#">Organisasyon ng Kamagfil</a></li>
-                        <li><a href="#">The Generals</a></li>
-                        <li><a href="#">Teacher Education Department Officers</a></li>
-                        <li><a href="#">Latera Recta Club</a></li>
-                        <li><a href="#">Lysse</a></li>
-                        
-                    </ul>
-                </div>
-                <div class="col-6 col-md-2">
-                    <h6 class="footer-title">Cultural</h6>
-                    <ul class="footer-list">
-                        <li><a href="#">Akasya</a></li>
-                        <li><a href="#">Bago City Marching Band</a></li>
-                        <li><a href="#">Likha Haraya</a></li>
-                        <li><a href="#">Lingua Connect</a></li>
-                        <li><a href="#">Talentos Club</a></li>
-                        <li><a href="#">Teatro Bagueno</a></li>
-                        <li><a href="#">The Voices Club</a></li>
+            <!-- Logo and Brand -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo/bago.png" alt="Bago City College" style="height: 60px; width: auto;" />
+                <span class="ms-2" style="font-weight:700; color: #25396f;">Bago City College</span>
+            </a>
 
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <ul class="navbar-nav" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link custom-nav-link" href="bcc-home.html">Home</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link custom-nav-link custom-nav-link-underline" href="#about">About</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link custom-nav-link custom-nav-link-underline active" href="#news">News</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link custom-nav-link custom-nav-link-underline" href="#courses">Course</a>
+                        </li>
                     </ul>
-                </div>
-                <div class="col-6 col-md-2">
-                    <h6 class="footer-title">Sports</h6>
-                    <ul class="footer-list">
-                        <li><a href="#">Athleticus</a></li>
-                        <li><a href="#">BCCC Arnis Striking Force</a></li>
-                        <li><a href="#">BCC Judo Clubt</a></li>
-                        <li><a href="#">BCC Phantom Taekwando Club</a></li>
-                        <li><a href="#">BCC Team Vipers</a></li>
-    
-                    </ul>
-                </div>
-                <div class="col-6 col-md-2">
-                    <h6 class="footer-title">Health Services</h6>
-                    <ul class="footer-list">
-                        <li><a href="#">College Red Cross Youth</a></li>
-                        <li><a href="#">DRYVV - BCC</a></li>
-                        <li><a href="#">Green Society</a></li>
-                        <li><a href="#">Peer Facilitators</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-2">
-                    <h6 class="footer-title">Documentation</h6>
-                    <ul class="footer-list">
-                        <li><a href="#">Captura</a></li>
-                        <li><a href="#">The Courier Publication</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-2">
-                    <h6 class="footer-title">Religious</h6>
-                    <ul class="footer-list">
-                        <li><a href="#">Campus Christian Fellowship</a></li>
-                        <li><a href="#">SCAP</a></li>
-                        <li><a href="#">New Life Apostolic Campus Ministry</a></li>
-                    </ul>
+                    <button class="nav-link login-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                        Get Started - Sign in
+                    </button>
                 </div>
             </div>
-            <hr class="footer-divider my-3" />
-            <div class="row g-4 align-items-start mb-2">
-                <div class="col-6 col-md-3">
-                    <h6 class="footer-title">Learn</h6>
-                    <ul class="footer-list">
-                        <li><a href="#">Buy Bitcoin</a></li>
-                        <li><a href="#">Buy XRP</a></li>
-                        <li><a href="#">Buy Ethereum</a></li>
-                        <li><a href="#">Buy Solana</a></li>
-                        <li><a href="#">Buy Cardano</a></li>
-                        <li><a href="#">Buy Monero</a></li>
-                        <li><a href="#">Buy Stellar</a></li>
-                        <li><a href="#">Buy Hyperliquid</a></li>
-                        <li><a href="#">Buy Dogecoin</a></li>
-                        <li><a href="#">Buy GoMining Token</a></li>
-                    </ul>
+        </div>
+    </nav>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="content-section" id="news" style="margin-top: 140px;">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+                <div>
+                    <!-- Breadcrumb Navigation -->
+                    <nav aria-label="breadcrumb" class="breadcrumb-header">
+                        <ol class="breadcrumb" style="margin-bottom: 0;">
+                            <li class="breadcrumb-item"><a href="bcc-home.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Campus News</li>
+                        </ol>
+                    </nav>
+
+                    <!-- Page Title -->
+                    <h1 style="font-size: 2.5rem; color: #3434FF; margin-top: 10px; margin-bottom: 0;">
+                        Campus News
+                    </h1>
                 </div>
-                <div class="col-6 col-md-3">
-                    <h6 class="footer-title">Developer</h6>
-                    <ul class="footer-list">
-                        <li><a href="#">API Documentation</a></li>
-                        <li><a href="#">SDK</a></li>
-                        <li><a href="#">Download Historical Data</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-3">
-                    <h6 class="footer-title">App Download</h6>
-                    <ul class="footer-list">
-                        <li><a href="#">Android Download</a></li>
-                        <li><a href="#">iOS Download</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-3">
-                    <h6 class="footer-title">Community</h6>
-                    <div class="footer-social d-flex flex-wrap gap-2 mt-2">
-                        <a href="#" class="footer-social-icon"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="footer-social-icon"><i class="fab fa-discord"></i></a>
-                        <a href="#" class="footer-social-icon"><i class="fab fa-reddit"></i></a>
-                        <a href="#" class="footer-social-icon"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="fas fa-globe footer-social-icon"></a>
+                
+                <!-- Search and Filter Section -->
+                <div class="d-flex align-items-center mt-3 mt-md-4">
+                    <div class="input-group me-2 flex-grow-1">
+                        <input type="text" class="form-control" placeholder="Search Headline" aria-label="Search news">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                            Search
+                        </button>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle filter-button-with-text" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-funnel"></i><span class="filter-text">Filter</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labeAlledby="filterDropdown">
+                            <li><a class="dropdown-item" href="#"><input type="checkbox" class="form-check-input me-2">Academic (5)</a></li>
+                            <li><a class="dropdown-item" href="#"><input type="checkbox" class="form-check-input me-2">Admission (10)</a></li>
+                            <li><a class="dropdown-item" href="#"><input type="checkbox" class="form-check-input me-2">Advancement (3)</a></li>
+                            <li><a class="dropdown-item" href="#"><input type="checkbox" class="form-check-input me-2">Courier Magazine (15)</a></li>
+                            <li><a class="dropdown-item" href="#"><input type="checkbox" class="form-check-input me-2">Student Story (3)</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Apply Filters <i class="bi bi-check-circle ms-2"></i></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom-bar d-flex flex-column flex-md-row justify-content-between align-items-center mt-4 pt-3">
-                <div class="footer-bottom-left text-muted small mb-2 mb-md-0">
-                    © 2018 Copyright Bago City College. 
+
+            <!-- News Grid -->
+            <div class="news-main-layout">
+                <!-- News Content (Left Side) -->
+                <div class="news-content">
+                    <!-- News Grid -->
+                    <div class="news-grid">
+                        <!-- News Card 1 -->
+                        <article class="card news-card">
+                            <img class="card-img-top news-main-image"
+                                 src="assets/images/samples/education2.jpg"
+                                 alt="Akasya Dance Champion 2025" />
+                            <div class="card-body">
+                                <div class="update-badge badge-student">Student Profile</div>
+                                <h2 class="card-title h5">Akasya Dance Champion 2025</h2>
+                                <p class="text-muted small d-flex align-items-center mb-2">
+                                    <i class="bi bi-calendar-event me-2"></i>June 20, 2025
+                                    <span class="mx-2">&bull;</span>
+                                    <i class="bi bi-person me-1"></i>Admin
+                                </p>
+                                <p class="card-text">
+                                    Jelly-o sesame snaps cheesecake topping. Cupcake fruitcake macaroon donut
+                                    pastry gummies tiramisu chocolate bar muffin.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- News Card 2 -->
+                        <article class="card news-card">
+                            <img class="card-img-top news-main-image"
+                                 src="assets/images/samples/education2.jpg"
+                                 alt="Bago City College Website - Revised" />
+                            <div class="card-body">
+                                <div class="update-badge badge-collegian">Collegian News</div>
+                                <h2 class="card-title h5">Bago City College Website - Revised</h2>
+                                <p class="text-muted small d-flex align-items-center mb-2">
+                                    <i class="bi bi-calendar-event me-2"></i>June 20, 2025
+                                    <span class="mx-2">&bull;</span>
+                                    <i class="bi bi-person me-1"></i>Admin
+                                </p>
+                                <p class="card-text">
+                                    Jelly-o sesame snaps cheesecake topping. Cupcake fruitcake macaroon donut
+                                    pastry gummies tiramisu chocolate bar muffin.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- News Card 3 -->
+                        <article class="card news-card">
+                            <img class="card-img-top news-main-image"
+                                 src="assets/images/samples/education2.jpg"
+                                 alt="La Salle University announces new director" />
+                            <div class="card-body">
+                                <div class="update-badge badge-university">University News</div>
+                                <h2 class="card-title h5">La Salle University announces new director of Honors Program</h2>
+                                <p class="text-muted small d-flex align-items-center mb-2">
+                                    <i class="bi bi-calendar-event me-2"></i>August 4, 2025
+                                    <span class="mx-2">&bull;</span>
+                                    <i class="bi bi-person me-1"></i>Admin
+                                </p>
+                                <p class="card-text">
+                                    Jelly-o sesame snaps cheesecake topping. Cupcake fruitcake macaroon donut pastry gummies tiramisu chocolate bar muffin.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- News Card 4 -->
+                        <article class="card news-card">
+                            <img class="card-img-top news-main-image"
+                                 src="assets/images/samples/education2.jpg"
+                                 alt="Academic Excellence Program" />
+                            <div class="card-body">
+                                <div class="update-badge badge-academic">Academic</div>
+                                <h2 class="card-title h5">New Academic Excellence Program Launched</h2>
+                                <p class="text-muted small d-flex align-items-center mb-2">
+                                    <i class="bi bi-calendar-event me-2"></i>August 1, 2025
+                                    <span class="mx-2">&bull;</span>
+                                    <i class="bi bi-person me-1"></i>Admin
+                                </p>
+                                <p class="card-text">
+                                    The college introduces a comprehensive academic excellence program designed to support high-achieving students.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- News Card 5 -->
+                        <article class="card news-card">
+                            <img class="card-img-top news-main-image"
+                                 src="assets/images/samples/education2.jpg"
+                                 alt="Research Grant Announcement" />
+                            <div class="card-body">
+                                <div class="update-badge badge-research">Research</div>
+                                <h2 class="card-title h5">Major Research Grant Awarded to Faculty</h2>
+                                <p class="text-muted small d-flex align-items-center mb-2">
+                                    <i class="bi bi-calendar-event me-2"></i>July 28, 2025
+                                    <span class="mx-2">&bull;</span>
+                                    <i class="bi bi-person me-1"></i>Admin
+                                </p>
+                                <p class="card-text">
+                                    Faculty members receive significant funding for groundbreaking research in sustainable development.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- News Card 6 -->
+                        <article class="card news-card">
+                            <img class="card-img-top news-main-image"
+                                 src="assets/images/samples/education2.jpg"
+                                 alt="Sports Championship Victory" />
+                            <div class="card-body">
+                                <div class="update-badge badge-sports">Sports</div>
+                                <h2 class="card-title h5">College Basketball Team Wins Regional Championship</h2>
+                                <p class="text-muted small d-flex align-items-center mb-2">
+                                    <i class="bi bi-calendar-event me-2"></i>July 25, 2025
+                                    <span class="mx-2">&bull;</span>
+                                    <i class="bi bi-person me-1"></i>Admin
+                                </p>
+                                <p class="card-text">
+                                    Our basketball team achieves remarkable victory in the regional championship finals.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination pagination-primary justify-content-end">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+
                 </div>
-                <div class="footer-bottom-center text-muted small mb-2 mb-md-0">
+
+                <!-- Sidebar (Right Side) -->
+                <div class="news-sidebar">
+                    <!-- Campus Updates Section -->
+<div class="sidebar-card">
+    <h3 class="sidebar-title">
+        Campus Updates
+    </h3>
+    <p class="sidebar-description">Stay informed with the latest happenings around campus.</p>
+    
+    <!-- Scrollable container wrapper -->
+    <div class="campus-updates-container">
+        <ul class="campus-updates-list">
+            <li class="campus-update-item">
+                <div class="update-badge badge-academic">Academic</div>
+                <div class="update-title">New Computer Science Lab Opens</div>
+                <p class="update-description">Explore our state-of-the-art facility.</p>
+                <div class="update-date">
+                    <i class="bi bi-calendar-event me-2"></i>
+                    <span>Aug 15, 2025</span>
+                </div>
+            </li>
+            <li class="campus-update-item">
+                <div class="update-badge badge-student">Student Life</div>
+                <div class="update-title">Annual Cultural Festival Preparations</div>
+                <p class="update-description">Get ready for a week of vibrant celebrations.</p>
+                <div class="update-date">
+                    <i class="bi bi-calendar-event me-2"></i>
+                    <span>Aug 12, 2025</span>
+                </div>
+            </li>
+            <li class="campus-update-item">
+                <div class="update-badge badge-university">University</div>
+                <div class="update-title">New Partnership with Tech Industry</div>
+                <p class="update-description">Exciting collaborations for student opportunities.</p>
+                <div class="update-date">
+                    <i class="bi bi-calendar-event me-2"></i>
+                    <span>Aug 10, 2025</span>
+                </div>
+            </li>
+            <li class="campus-update-item">
+                <div class="update-badge badge-collegian">Collegian</div>
+                <div class="update-title">Student Publication Wins Award</div>
+                <p class="update-description">Celebrating excellence in student journalism.</p>
+                <div class="update-date">
+                    <i class="bi bi-calendar-event me-2"></i>
+                    <span>Aug 8, 2025</span>
+                </div>
+            </li>
+            <li class="campus-update-item">
+                <div class="update-badge badge-academic">Academic</div>
+                <div class="update-title">Library Extended Hours Announced</div>
+                <p class="update-description">More time for study and research during exam season.</p>
+                <div class="update-date">
+                    <i class="bi bi-calendar-event me-2"></i>
+                    <span>Aug 5, 2025</span>
+                </div>
+            </li>
+            <!-- Additional items to demonstrate scrolling -->
+            <li class="campus-update-item">
+                <div class="update-badge badge-research">Research</div>
+                <div class="update-title">Faculty Research Grant Approved</div>
+                <p class="update-description">Funding secured for innovative sustainability project.</p>
+                <div class="update-date">
+                    <i class="bi bi-calendar-event me-2"></i>
+                    <span>Aug 3, 2025</span>
+                </div>
+            </li>
+            <li class="campus-update-item">
+                <div class="update-badge badge-sports">Sports</div>
+                <div class="update-title">Basketball Team Regional Victory</div>
+                <p class="update-description">Congratulations to our champions!</p>
+                <div class="update-date">
+                    <i class="bi bi-calendar-event me-2"></i>
+                    <span>Aug 1, 2025</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Upcoming Events Section with Scrollable Container -->
+<div class="sidebar-card">
+    <h3 class="sidebar-title">
+       Upcoming Events
+    </h3>
+    <p class="sidebar-description">Don't miss out on important dates and activities.</p>
+    
+    <!-- Scrollable container wrapper -->
+    <div class="campus-updates-container">
+        <ul class="campus-updates-list">
+            <li class="campus-update-item">
+                <div class="update-badge badge-student">Event</div>
+                <div class="update-title">Freshmen Orientation Week</div>
+                <p class="update-description">Welcome new students to the BCC family!</p>
+                <div class="update-date">
+                    <i class="bi bi-calendar-event me-2"></i>
+                    <span>Aug 25, 2025</span>
+                </div>
+            </li>
+            <li class="campus-update-item">
+                <div class="update-badge badge-academic">Academic</div>
+                <div class="update-title">Research Symposium</div>
+                <p class="update-description">Showcasing groundbreaking academic projects.</p>
+                <div class="update-date">
+                    <i class="bi bi-calendar-event me-2"></i>
+                    <span>Sep 2, 2025</span>
+                </div>
+            </li>
+            <li class="campus-update-item">
+                <div class="update-badge badge-university">Sports</div>
+                <div class="update-title">Inter-College Basketball Tournament</div>
+                <p class="update-description">Cheer for our teams in this exciting competition.</p>
+                <div class="update-date">
+                    <i class="bi bi-calendar-event me-2"></i>
+                    <span>Sep 10, 2025</span>
+                </div>
+            </li>
+            <li class="campus-update-item">
+                <div class="update-badge badge-student">Event</div>
+                <div class="update-title">University Week</div>
+                <p class="update-description">A week of celebration and campus spirit.</p>
+                <div class="update-date">
+                    <i class="bi bi-calendar-event me-2"></i>
+                    <span>Sep 15, 2025</span>
+                </div>
+            </li>
+            <li class="campus-update-item">
+                <div class="update-badge badge-academic">Academic</div>
+                <div class="update-title">Midterm Examinations</div>
+                <p class="update-description">Important dates for all students.</p>
+                <div class="update-date">
+                    <i class="bi bi-calendar-event me-2"></i>
+                    <span>Oct 10, 2025</span>
+                </div>
+            </li>
+            <!-- Additional items to demonstrate scrolling -->
+            <li class="campus-update-item">
+                <div class="update-badge badge-collegian">Event</div>
+                <div class="update-title">Alumni Homecoming</div>
+                <p class="update-description">Reconnect with fellow graduates and celebrate achievements.</p>
+                <div class="update-date">
+                    <i class="bi bi-calendar-event me-2"></i>
+                    <span>Oct 20, 2025</span>
+                </div>
+            </li>
+            <li class="campus-update-item">
+                <div class="update-badge badge-academic">Academic</div>
+                <div class="update-title">Final Examinations</div>
+                <p class="update-description">Prepare for semester-end assessments.</p>
+                <div class="update-date">
+                    <i class="bi bi-calendar-event me-2"></i>
+                    <span>Nov 15, 2025</span>
+                </div>
+            </li>
+            <li class="campus-update-item">
+                <div class="update-badge badge-student">Event</div>
+                <div class="update-title">Graduation Ceremony</div>
+                <p class="update-description">Celebrating the achievements of our graduating class.</p>
+                <div class="update-date">
+                    <i class="bi bi-calendar-event me-2"></i>
+                    <span>Dec 10, 2025</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+            </div>
+        </div>
+    </main>
+    <div class="container media-inquiries-wrapper" style="margin-top: 50px; margin-bottom: 20px;">
+        <hr style="border-top: 1px solid #eee; margin-top: 20px; margin-bottom: 20px;">
+        <div class="media-inquiries-section" style="padding: 20px 0;">
+            <h2 style="font-size: 2.25rem; font-weight: 700; color: #0B0B2C; margin-bottom: 1rem;">Magazine and Newsletter</h2>
+            <p style="font-size: 1rem; color: #495057; line-height: 1.5; max-width: 72ch;">
+                If you are a member of the media and would like to request materials, interviews, or permission to
+                film or photograph on campus, contact:
+            </p>
+            <p style="font-size: 1rem; color: #495057; margin-top: 1rem; margin-bottom: 0;">
+                Brian Kirschner<br>
+                <a href="mailto:kirschner@lasalle.edu" style="color: #3434FF; text-decoration: underline;">kirschner@lasalle.edu</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="row">
+                <!-- Main Footer Content -->
+                <div class="col-lg-6 mb-4">
+                    <section class="footer-main">
+                        <h2 class="footer-main-title mt-0">
+                            <span class="footer-title-line1">Empowering minds,</span>
+                            <span class="footer-title-line2">building careers.</span>
+                        </h2>
+                        <p class="footer-main-subtitle">Inspiring growth through knowledge and opportunity.</p>
+                        
+                        <!-- Action Buttons -->
+                        <div class="footer-action-buttons mb-4">
+                            <a href="https://admission.bagocitycollege.com/BCCAdmission/Web" 
+                               class="btn btn-primary footer-btn-enrollment">
+                                Apply Now <i class="bi bi-arrow-up-right-square ms-2"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-primary footer-btn-courses">
+                                Enrollment Schedule
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- Contact Information Grid -->
+                    <div class="row g-2">
+                        <div class="col-md-5">
+                            <section class="footer-contact">
+                                <h6 class="footer-title" id="contact-title">Contact</h6>
+                                <ul class="footer-list">
+                                    <li><a href="tel:+63344611038">(034) 461 1038 / (034) 461 0963</a></li>
+                                    <li><a href="tel:+639157125272">0915 712 5272 / 0921 2753 029</a></li>
+                                    <li><a href="mailto:bagocitycollege@gmail.com">bagocitycollege@gmail.com</a></li>
+                                </ul>
+                            </section>
+                        </div>
+
+                        <div class="col-md-5">
+                            <section class="footer-social-section">
+                                <h6 class="footer-title" id="connect-title">Connect</h6>
+                                <div class="footer-social d-flex flex-wrap gap-2 mb-4">
+                                    <a href="https://www.facebook.com/bagocitycollegeofficial" class="footer-social-icon">
+                                        <i class="fab fa-facebook"></i>
+                                    </a>
+                                    <a href="https://www.facebook.com/messages/t/459017794139805" class="footer-social-icon">
+                                        <i class="fab fa-facebook-messenger"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/school/bagocitycollege/" class="footer-social-icon">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                    <a href="https://alumni.bagocitycollege.com/" class="footer-social-icon">
+                                        <i class="fas fa-globe"></i>
+                                    </a>
+                                </div>
+                            </section>
+                        </div>
+
+                        <div class="col-md-5">
+                            <section class="footer-documentation">
+                                <h6 class="footer-title" id="documentation-title">Documentation</h6>
+                                <ul class="footer-list">
+                                    <li><a href="https://www.facebook.com/profile.php?id=100063885379788">Captura</a></li>
+                                    <li><a href="https://www.facebook.com/bccthecourier">The Courier Publication</a></li>
+                                </ul>
+                            </section>
+                        </div>
+
+                        <div class="col-md-5">
+                            <section class="footer-location">
+                                <h6 class="footer-title" id="address-title">Location</h6>
+                                <ul class="footer-list">
+                                    <li class="d-flex align-items-start">
+                                        <i class="fas fa-map-marker-alt footer-social-icon"></i>
+                                        <a href="https://www.google.com/maps/place/Bago+City+College/@10.5308626,122.8409068,17z/data=!3m1!4b1!4m6!3m5!1s0x33aec63007585bb7:0x46a4d1fea7196baf!8m2!3d10.5308626!4d122.8434817!16s%2Fg%2F11_tp0vg7?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D" 
+                                           class="ms-2">
+                                            Rafael Salas Drive Bago City 6101 Neg. Occ. Philippines
+                                        </a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Organization Sections -->
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <!-- Academic Organizations -->
+                        <div class="col-md-4">
+                            <section class="footer-academic">
+                                <h6 class="footer-title" id="academic-title">Academic</h6>
+                                <ul class="footer-list">
+                                    <li><a href="https://www.facebook.com/profile.php?id=100090262734606">Abhaya</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100086952939198">BSOA Alliance</a></li>
+                                    <li><a href="#">Cilt</a></li>
+                                    <li><a href="#">Criminology Department Officers</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100087270083733">La Liga Historiadores</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100086980203419">Organisasyon ng Kamagfil</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100086759912722">The Generals</a></li>
+                                    <li><a href="#">Teacher Education Department Officers</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100086638070436">Latera Recta Club</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100087274741123">League of Young Social Studies Educators</a></li>
+                                </ul>
+                            </section>
+                        </div>
+
+                        <!-- Cultural & Health Organizations -->
+                        <div class="col-md-4">
+                            <section class="footer-cultural">
+                                <h6 class="footer-title" id="cultural-title">Cultural</h6>
+                                <ul class="footer-list">
+                                    <li><a href="https://www.facebook.com/profile.php?id=100087555679272">Akasya</a></li>
+                                    <li><a href="https://www.facebook.com/bagocitymarchingband">Bago City Marching Band</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=61551069933183">Likha Haraya</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=61563546293604">Lingua Connect</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100090054301485">Talentos Club</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100086803998713">Teatro Bagueno</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100087745900576">The Voices Club</a></li>
+                                </ul>
+                            </section>
+
+                            <section class="footer-health mt-4">
+                                <h6 class="footer-title" id="health-title">Health</h6>
+                                <ul class="footer-list">
+                                    <li><a href="https://www.facebook.com/bagocitycollegecrcy">College Red Cross Youth</a></li>
+                                    <li><a href="https://www.facebook.com/groups/260081923638826">DRYVV - BCC</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100069856392533">Green Society</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100063958208736">Peer Facilitators</a></li>
+                                </ul>
+                            </section>
+                        </div>
+
+                        <!-- Sports & Religious Organizations -->
+                        <div class="col-md-4">
+                            <section class="footer-sports">
+                                <h6 class="footer-title" id="sports-title">Sports</h6>
+                                <ul class="footer-list">
+                                    <li><a href="#">Athleticus</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=61563838155738">BCCC Arnis Striking Force</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=61552011866440">BCC Judo</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=61550890987266">BCC Phantom Taekwando</a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=61565137230236">BCC Team Vipers</a></li>
+                                </ul>
+                            </section>
+
+                            <section class="footer-religious mt-4">
+                                <h6 class="footer-title" id="religious-title">Religious</h6>
+                                <ul class="footer-list">
+                                    <li><a href="https://www.facebook.com/groups/bagocitycollegeccf">CCF</a></li>
+                                    <li><a href="#">SCAP</a></li>
+                                    <li><a href="https://www.facebook.com/nlacm.bcc">NLACM</a></li>
+                                </ul>
+                            </section>
+
+                            <section class="footer-lgbtq mt-4">
+                                <h6 class="footer-title" id="lgbtq-title">LGBTQ</h6>
+                                <ul class="footer-list">
+                                    <li><a href="https://www.facebook.com/profile.php?id=100086706314173">LAKAPATI</a></li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact CTA Section -->
+            <hr style="opacity: 10%;">
+            <div class="container my-4">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-md-8 mb-3 mb-md-0">
+                        <p class="mb-0 footer-contact-text">
+                            Should you require further information, please do not hesitate to 
+                            <strong style="color:#3434FF">contact us</strong> via email.
+                            We are happy to assist you with any inquiries regarding admissions.
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <div class="d-flex justify-content-md-end align-items-center gap-2 flex-wrap">
+                            <div class="border border-primary rounded px-3 py-2" style="color:#3434FF;">
+                                bagocitycollege@gmail.com
+                            </div>
+                            <button type="button" id="openGmailBtn" class="btn btn-primary" 
+                                    style="background-color:#3434FF; border-color:#3434FF; color:white; font-weight: 500;">
+                                Send Letter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom-bar d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
+                <div class="footer-bottom-left small mb-2 mb-md-0">
+                    © 2018 Copyright Bago City College
+                </div>
+                <div class="footer-bottom-center small mb-2 mb-md-0">
                     Powered by Technopal Software Developer and Consultancy
                 </div>
-                <div class="footer-bottom-right text-muted small">
-                    24h Volume <span class="fw-bold">5,051,594,578</span> USDT
+                <div class="footer-bottom-right small">
+                    <span id="realTimeDisplay"></span>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- ========== FLOATING ELEMENTS ========== -->
+    <button id="backToTop" class="back-to-top-btn" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ========== SCRIPTS ========== -->
+    <!-- Core Scripts -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/vendors/fontawesome/all.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="assets/js/scroll-animations.js"></script>
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/back-to-top.js"></script>
+    <script src="assets/js/real-time-display.js"></script>
+    <script src="assets/js/footer-interactions.js"></script>
+    <script src="assets/js/news-filters.js"></script>
+
+    <!-- Inline Scripts (to be moved to external files) -->
+    <script>
+        // Enhanced sidebar scroll functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollContainers = document.querySelectorAll('.campus-updates-container');
+    
+    scrollContainers.forEach(container => {
+        const list = container.querySelector('.campus-updates-list');
+        const items = list.querySelectorAll('.campus-update-item');
+        
+        // Function to check if scrollbar is needed
+        function updateScrollVisibility() {
+            if (items.length > 5) {
+                container.style.overflowY = 'auto';
+                container.classList.add('scrollable');
+            } else {
+                container.style.overflowY = 'visible';
+                container.classList.remove('scrollable');
+            }
+        }
+        
+        // Initial check
+        updateScrollVisibility();
+        
+        // Add scroll indicator when content overflows
+        function addScrollIndicator() {
+            if (container.scrollHeight > container.clientHeight) {
+                container.setAttribute('data-scrollable', 'true');
+            } else {
+                container.removeAttribute('data-scrollable');
+            }
+        }
+        
+        // Check on resize
+        window.addEventListener('resize', function() {
+            updateScrollVisibility();
+            addScrollIndicator();
+        });
+        
+        // Initial indicator check
+        addScrollIndicator();
+        
+        // Smooth scroll behavior for mobile touch
+        let isScrolling = false;
+        
+        container.addEventListener('touchstart', function() {
+            isScrolling = true;
+        });
+        
+        container.addEventListener('touchend', function() {
+            setTimeout(() => {
+                isScrolling = false;
+            }, 100);
+        });
+        
+        // Add visual feedback for scrollable areas on mobile
+        if ('ontouchstart' in window) {
+            container.addEventListener('scroll', function() {
+                container.classList.add('scrolling');
+                
+                clearTimeout(container.scrollTimer);
+                container.scrollTimer = setTimeout(() => {
+                    container.classList.remove('scrolling');
+                }, 150);
+            });
+        }
+    });
+    
+    // Function to dynamically add/remove items (for future use)
+    window.updateSidebarItems = function(containerId, items) {
+        const container = document.getElementById(containerId);
+        if (container) {
+            const list = container.querySelector('.campus-updates-list');
+            list.innerHTML = '';
+            
+            items.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.className = 'campus-update-item';
+                li.innerHTML = `
+                    <div class="update-badge badge-${item.type}">${item.badgeText}</div>
+                    <div class="update-title">${item.title}</div>
+                    <p class="update-description">${item.description}</p>
+                    <div class="update-date">
+                        <i class="bi bi-calendar-event"></i>
+                        <span>${item.date}</span>
+                    </div>
+                `;
+                list.appendChild(li);
+            });
+            
+            // Update scroll visibility after adding items
+            const scrollContainer = container.querySelector('.campus-updates-container');
+            if (items.length > 5) {
+                scrollContainer.style.overflowY = 'auto';
+                scrollContainer.classList.add('scrollable');
+            } else {
+                scrollContainer.style.overflowY = 'visible';
+                scrollContainer.classList.remove('scrollable');
+            }
+        }
+    };
+});
+        // Password Toggle Functionality
+        document.addEventListener('click', function (event) {
+            const toggleBtn = event.target.closest('#togglePasswordBtn');
+            if (!toggleBtn) return;
+            
+            const pwdInput = document.getElementById('modal_password_input');
+            const icon = document.getElementById('togglePasswordIcon');
+            if (!pwdInput || !icon) return;
+            
+            const isPassword = pwdInput.getAttribute('type') === 'password';
+            pwdInput.setAttribute('type', isPassword ? 'text' : 'password');
+            
+            icon.classList.toggle('bi-eye', !isPassword);
+            icon.classList.toggle('bi-eye-slash', isPassword);
+            toggleBtn.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+        });
+
+        // Gmail Button Handler
+        document.getElementById('openGmailBtn').addEventListener('click', function() {
+            window.open('https://mail.google.com/mail/?view=cm&fs=1&to=bagocitycollege@gmail.com', '_blank');
+        });
+
+
+        // Scroll-triggered fade-in animation
+function handleScrollAnimation() {
+    const elements = document.querySelectorAll('.fade-in-element');
+    
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150; // Trigger when element is 150px from viewport
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('fade-in');
+        }
+    });
+}
+
+// Add event listeners
+window.addEventListener('scroll', handleScrollAnimation);
+window.addEventListener('load', handleScrollAnimation);
+window.addEventListener('resize', handleScrollAnimation);
+
+// About section card slider functionality
+const aboutCardsRow = document.querySelector('.about-cards-row');
+if (aboutCardsRow) {
+    const cards = aboutCardsRow.querySelectorAll('.col-md-6.fade-in-element');
+    const leftBtn = document.getElementById('about-arrow-left');
+    const rightBtn = document.getElementById('about-arrow-right');
+    
+    let currentPage = 0;
+    const cardsPerPage = 2;
+    const totalPages = Math.ceil(cards.length / cardsPerPage);
+    
+    function showCards(page, direction) {
+        // Hide all cards
+        cards.forEach(card => {
+            card.classList.add('about-card-hidden');
+            card.classList.remove('slide-in-right', 'slide-in-left', 'slide-out-left', 'slide-out-right');
+        });
+        
+        // Show new cards with slide-in animation
+        for (let i = page * cardsPerPage; i < (page + 1) * cardsPerPage && i < cards.length; i++) {
+            cards[i].classList.remove('about-card-hidden');
+            if (direction === 'right') {
+                cards[i].classList.add('slide-in-right');
+            } else if (direction === 'left') {
+                cards[i].classList.add('slide-in-left');
+            }
+        }
+    }
+    
+    function updateCards() {
+        // Show only current page cards, no animation
+        cards.forEach((card, index) => {
+            card.classList.remove('slide-in-right', 'slide-in-left', 'slide-out-left', 'slide-out-right');
+            if (index >= currentPage * cardsPerPage && index < (currentPage + 1) * cardsPerPage) {
+                card.classList.remove('about-card-hidden');
+            } else {
+                card.classList.add('about-card-hidden');
+            }
+        });
+        
+        if (leftBtn) leftBtn.disabled = currentPage === 0;
+        if (rightBtn) rightBtn.disabled = currentPage === totalPages - 1;
+    }
+    
+    if (leftBtn) {
+        leftBtn.addEventListener('click', function() {
+            if (currentPage > 0) {
+                // Animate current cards out to right
+                const currentCards = Array.from(cards).filter((card, index) => 
+                    index >= currentPage * cardsPerPage && index < (currentPage + 1) * cardsPerPage
+                );
+                currentCards.forEach(card => {
+                    card.classList.remove('slide-in-right', 'slide-in-left', 'slide-out-left', 'slide-out-right');
+                    card.classList.add('slide-out-right');
+                });
+                setTimeout(() => {
+                    currentPage--;
+                    showCards(currentPage, 'left');
+                    setTimeout(() => {
+                        updateCards();
+                    }, 450);
+                }, 450);
+            }
+        });
+    }
+    
+    if (rightBtn) {
+        rightBtn.addEventListener('click', function() {
+            if (currentPage < totalPages - 1) {
+                // Animate current cards out to left
+                const currentCards = Array.from(cards).filter((card, index) => 
+                    index >= currentPage * cardsPerPage && index < (currentPage + 1) * cardsPerPage
+                );
+                currentCards.forEach(card => {
+                    card.classList.remove('slide-in-right', 'slide-in-left', 'slide-out-left', 'slide-out-right');
+                    card.classList.add('slide-out-left');
+                });
+                setTimeout(() => {
+                    currentPage++;
+                    showCards(currentPage, 'right');
+                    setTimeout(() => {
+                        updateCards();
+                    }, 450);
+                }, 450);
+            }
+        });
+    }
+    
+    // Initialize
+    updateCards();
+}
+
+// Back to Top Button Functionality
+const backToTopBtn = document.getElementById('backToTop');
+
+if (backToTopBtn) {
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    // Scroll to top when button is clicked
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Add focus effect to back-to-top button
+    backToTopBtn.addEventListener('focus', function() {
+        this.style.boxShadow = '0 0 0 0.2rem rgba(52, 52, 255, 0.25)';
+    });
+    
+    backToTopBtn.addEventListener('blur', function() {
+        this.style.boxShadow = '';
+    });
+}
+
+// Real-time Date and Time Display
+function updateRealTime() {
+    const now = new Date();
+    
+    // Format date as "20 June 2025"
+    const day = now.getDate();
+    const monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    const month = monthNames[now.getMonth()];
+    const year = now.getFullYear();
+    
+    // Format time as "8:00 AM"
+    let hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    
+    // Format day of week as "Monday"
+    const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const dayOfWeek = dayNames[now.getDay()];
+    
+    // Combine all parts: "20 June 2025, 8:00 AM Monday"
+    const formattedDateTime = `${day} ${month} ${year}, ${hours}:${minutes} ${ampm} ${dayOfWeek}`;
+    
+    // Update the display
+    const realTimeElement = document.getElementById('realTimeDisplay');
+    if (realTimeElement) {
+        realTimeElement.textContent = formattedDateTime;
+    }
+}
+
+// Update immediately when page loads
+updateRealTime();
+
+// Update every second (1000 milliseconds)
+setInterval(updateRealTime, 1000);
+
+
+// Footer Section Hover Effects
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = [
+        { titleId: 'connect-title', targetSelector: '.footer-social' },
+        { titleId: 'contact-title', targetClass: 'footer-contact' },
+        { titleId: 'documentation-title', targetClass: 'footer-documentation' },
+        { titleId: 'address-title', targetClass: 'footer-location' },
+        { titleId: 'academic-title', targetClass: 'footer-academic' },
+        { titleId: 'cultural-title', targetClass: 'footer-cultural' },
+        { titleId: 'health-title', targetClass: 'footer-health' },
+        { titleId: 'sports-title', targetClass: 'footer-sports' },
+        { titleId: 'religious-title', targetClass: 'footer-religious' },
+        { titleId: 'lgbtq-title', targetClass: 'footer-lgbtq' }
+    ];
+    
+    sections.forEach(section => {
+        const title = document.getElementById(section.titleId);
+        let target;
+        
+        if (section.targetSelector) {
+            target = document.querySelector(section.targetSelector);
+        } else if (section.targetClass) {
+            target = document.querySelector('.' + section.targetClass);
+        } else {
+            target = title ? title.nextElementSibling : null;
+        }
+        
+        if (title && target) {
+            target.addEventListener('mouseenter', function() {
+                title.style.color = '#3434FF';
+            });
+            
+            target.addEventListener('mouseleave', function() {
+                title.style.color = '';
+            });
+        }
+    });
+});
+
+
+// Password Toggle Functionality
+document.addEventListener('click', function (event) {
+    const toggleBtn = event.target.closest('#togglePasswordBtn');
+    if (!toggleBtn) return;
+    
+    const pwdInput = document.getElementById('modal_password_input');
+    const icon = document.getElementById('togglePasswordIcon');
+    if (!pwdInput || !icon) return;
+    
+    const isPassword = pwdInput.getAttribute('type')    === 'password';
+    pwdInput.setAttribute('type', isPassword ? 'text' : 'password');
+
+    // Ensure correct icon state
+    icon.classList.toggle('bi-eye', !isPassword);
+    icon.classList.toggle('bi-eye-slash', isPassword);
+    toggleBtn.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+});
+
+// Gmail Button Handler
+document.addEventListener('DOMContentLoaded', function() {
+    const gmailBtn = document.getElementById('openGmailBtn');
+    if (gmailBtn) {
+        gmailBtn.addEventListener('click', function() {
+            window.open('https://mail.google.com/mail/?view=cm&fs=1&to=bagocitycollege@gmail.com', '_blank');
+        });
+    }
+});
+
+    </script>
 </body>
 </html>
